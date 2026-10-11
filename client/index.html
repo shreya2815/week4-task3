@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud Deployment Project</title>
+</head>
+<body>
+    <h1>Week 4 Task 3</h1>
+    <h2>Cloud Deployment Web Application</h2>
+
+    <p id="status">Checking server connection...</p>
+
+    <button onclick="checkServer()">Check Server</button>
+
+    <script>
+        async function checkServer() {
+            const status = document.getElementById("status");
+
+            try {
+                const response = await fetch("http://localhost:5000/health");
+                const data = await response.json();
+
+                status.textContent = "Backend Status: " + data.status;
+            } catch (error) {
+                status.textContent = "Unable to connect to the backend.";
+            }
+        }
+
+        checkServer();
+    </script>
+</body>
+</html>
