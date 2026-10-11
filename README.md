@@ -27,3 +27,10 @@ week4-task3/
 ├── docs/
 │   └── architecture.md
 └── README.md
+## Live Deployment
+
+https://week4-task3.onrender.com
+
+## Deployment Status
+
+Backend is running successfully on Render.
